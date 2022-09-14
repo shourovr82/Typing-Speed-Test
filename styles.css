@@ -200,6 +200,20 @@ button {
     width: 100%;
   }
 
+  #display {
+    font-size: 20px;
+    height: 150px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+
+  #question {
+    height: 150px;
+    padding: 10px;
+    font-size: 20px;
+  }
+
   .card {
     flex-direction: column;
   }
