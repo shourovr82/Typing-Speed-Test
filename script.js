@@ -58,8 +58,6 @@ const typeController = (e) => {
   if (questionText === userText) {
     gameOver();
   }
-  console.log(questionText)
-
 };
 
 const validate = (key) => {
