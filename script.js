@@ -18,7 +18,6 @@ fetch("./texts.json")
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
   });
-
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
@@ -46,13 +45,17 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount++;
   }
 
   // check if given question text is equal to user typed text
+
+
   if (questionText === userText) {
-    console.log('missed')
     gameOver();
   }
+  console.log(questionText)
+
 };
 
 const validate = (key) => {
@@ -79,14 +82,13 @@ const gameOver = () => {
   // make it inactive
   display.classList.add("inactive");
   // show result
-  const newDiv = document.createElement('div')
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
-  console.log(questionText, timeTaken, errorCount)
+
 
   addHistory(questionText, timeTaken, errorCount);
 
